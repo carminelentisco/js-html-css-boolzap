@@ -1,0 +1,23 @@
+/* ---------- IMPORT ---------- */ù
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+/*
+ * REGULAR : 400 [ >PER TUTTI I TESTI< ]
+ *
+ * LIGHT : 300 [ >PER TUTTI GLI ORARI< ]
+ *
+*/
+
+/* ---------- GENERAL RULE ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
