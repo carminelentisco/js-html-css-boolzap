@@ -27,7 +27,7 @@ jQuery( document ).ready( function($) {
             inputText.val('');
             if ( newInputText !== '' ) {
                 var templateSendMessage = $('.template .template-message').clone();
-                templateSendMessage.find('span:first-child').text(newInputText);
+                templateSendMessage.find('.message span:first-child').text(newInputText);
                 messageBox.append(templateSendMessage);
                 iconMicSend.removeClass('fa-paper-plane').addClass('fa-microphone');
             }
