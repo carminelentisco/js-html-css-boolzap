@@ -262,24 +262,34 @@
             </header>
 
             <!-- Conversazione -->
-            <main class="message-box flex_column">
+            <main>
 
-                <!-- Message send  -->
-               <div class="message message-send flex_column">
-                    <span>Ciao</span>
-                    <span>01:15</span>
-                </div>
+                <section class="message-box flex_column ">
+                   
+                    <!-- Message send  -->
+                    <div class="flex_end">
+                        <div class="message message-send flex_column">
+                            <span>Ciao come stai</span>
+                            <span>01:15</span>
+                        </div>
+                    </div>
 
-                <!-- Message recive -->
-                <div class="message message-recive flex_column">
-                    <span>Ciao</span>
-                    <span>01:15</span>
-                </div>
+                    <!-- Message recive -->
+                    <div class="flex_start">
+                        <div class="message message-recive flex_column">
+                            <span>Ciao</span>
+                            <span>01:15</span>
+                        </div>
+                    </div>
 
-                <div class="message message-send flex_column">
-                    <span>Ciao</span>
-                    <span>01:15</span>
-                </div>
+                    <div class="flex_end">
+                        <div class="message message-send flex_column">
+                            <span>Ciao come stai?</span>
+                            <span>01:15</span>
+                        </div>
+                    </div>
+
+                </section>
 
             </main>
             
@@ -296,10 +306,13 @@
 
     <!-- TEMPLATE -->
     <div class="template">
-        <div class="template-message message message-send flex_column">
-            <span>Ciao</span>
-            <span>01:15</span>
-        </div>
+
+        <div class="template-message flex_end">
+            <div class="message message-send flex_column">
+                <span>Ciao</span>
+                <span>01:15</span>
+            </div>
+       </div>
     </div>
   
 </body>
