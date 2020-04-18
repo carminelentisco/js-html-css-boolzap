@@ -7,7 +7,7 @@
 
 /* ---------- IMPORT ---------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
 /*
  * REGULAR : 400 [ >PER TUTTI I TESTI< ]
@@ -48,14 +48,6 @@ body {
 
 .header_background {
     background-color:  #eaeaea;
-}
-
-.green_message {
-    background-color: #dcf8c0;
-}
-
-.white_message {
-    background-color: #fff;
 }
 
 .margin_bottom_30px {
@@ -152,7 +144,7 @@ main {
 }
 
 .bell i {
-    color: #b1b1b1;
+    color: #9fd8f9;
 }
 
 .notification-sound-text p:first-child {
@@ -170,38 +162,50 @@ main {
 /* Search setion */
 
 .search {
-    background-color: #eaeaea;
+    display: flex;
     padding: 5px;
+    background-color: #fafafa;
 }
 
-.search-box{
-    display: flex;
-    align-items: center;
-    border: 1px solid #eaeaea;
+.search span {
+    display: block;
+    height: 25px;
     background-color: #fff;
+    border: 1px solid  #eaeaea;
+    border-right: none;
 }
 
 .search input {
-    font-size: 10px;
+    height: 25px;
+    padding: 0 5px;
     color: #577383;
-    border: none;
+    font-size: 10px;
     flex-grow: 1;
+    border: 1px solid  #eaeaea;
+    border-left: none;
 }
 
-.search i {
-    color: #577383;
+.search span i {
     font-size: 10px;
+    color: #eaeaea;
     padding: 5px 20px;
-    background-color: #fff; 
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 /* Chat section*/
 
 .global-chat {
-    height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     flex-grow: 1;
+}
+
+.global-chat .chat {
+    border-bottom: 1px solid #eaeaea; 
+}
+
+.global-chat .chat:last-child {
+    border: none;
+
 }
 
 .chat {
@@ -294,7 +298,7 @@ main {
 /* Main Right */
 
 .message-box {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .message {
@@ -323,8 +327,9 @@ main {
 }
 
 .message span:first-child {
-    font-size: 15px;
+    font-size: 13px;
     margin: 0 0 10px 0;
+    overflow-wrap: anywhere;
 }
 
 .message span:last-child {
