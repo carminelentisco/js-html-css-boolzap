@@ -125,6 +125,7 @@ img {
 
 main {
     overflow: hidden;
+    height: 100%;
 }
 
 .bell {
@@ -198,8 +199,9 @@ main {
 /* Chat section*/
 
 .global-chat {
-    overflow-y: scroll;
     height: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
 }
 
 .chat {
