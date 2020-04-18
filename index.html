@@ -25,7 +25,7 @@
                 <img src="img/avatar_io.jpg" alt="Avatar Utente">
 
                 <!-- Azioni menù sinistra -->
-                <div class="header-left-action">
+                <div class="header-left-action flex_align_center">
                     <i class="fas fa-circle-notch"></i>
                     <i class="fas fa-comment-alt"></i>
                     <i class="fas fa-ellipsis-v"></i>
@@ -34,7 +34,7 @@
             </header>
 
             <!-- Main chat left -->
-            <main>
+            <main class="flex_column">
 
                 <!-- Notifica -->
                 <section class="sound-notification">
@@ -260,60 +260,23 @@
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
+
             </header>
 
             <!-- Conversazione -->
-            <main id="message-box">
+            <main class="message-box flex_column">
 
-                <!-- My message -->
-               <div class="template-my-message margin_bottom_30px flex_end">
-                
-                    <div class="message green_message ">
-
-                        <div class="text-message">
-                            <p>Ciao come stai?</p>                         
-                        </div>
-
-                        <div class="time-message-position">
-                            <span class="text-time-message-chat">06:20</span>
-                        </div>
-
-                    </div> 
-
-               </div>
-
-               <!-- Other message -->
-               <div class="margin_bottom_30px flex_start">
-                
-                    <div class="message white_message">
-
-                        <div class="text-message">
-                            <p>Come stai?</p>                         
-                        </div>
-
-                        <div class="time-message-position">
-                            <span class="text-time-message-chat">14:21</span>
-                        </div>
-
-                    </div> 
-
+                <!-- Message send  -->
+               <div class="message message-send flex_column">
+                    <span>Ciao</span>
+                    <span>01:15</span>
                 </div>
 
-                <div class="margin_bottom_30px flex_end">
-                
-                    <div class="message green_message ">
-
-                        <div class="text-message">
-                            <p>Ciao come stai?</p>                         
-                        </div>
-
-                        <div class="time-message-position">
-                            <span class="text-time-message-chat">06:20</span>
-                        </div>
-
-                    </div> 
-
-               </div>
+                <!-- Message recive -->
+                <div class="message message-recive flex_column">
+                    <span>Ciao</span>
+                    <span>01:15</span>
+                </div>
 
             </main>
             
@@ -327,6 +290,15 @@
         </section>
 
     </div>
-    
+
+
+    <!-- TEMPLATE -->
+    <div class="template">
+        <div class="template-message message message-send flex_column">
+            <span>Ciao</span>
+            <span>01:15</span>
+        </div>
+    </div>
+  
 </body>
 </html>
