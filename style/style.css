@@ -87,8 +87,8 @@ body {
 /* ---- App section left ---- */
 
 .app-left {
-    width: 35%;
-    height: 100%;
+    /* height: 100%; */
+    flex-basis: 35%;
     display: flex;
     flex-direction: column;
 }
@@ -99,6 +99,7 @@ img {
     height: 40px;
     width: 40px;
     border-radius: 100%;
+    cursor: pointer;
 }
 
 .header-left {
@@ -117,7 +118,6 @@ img {
 
 main {
     overflow: hidden;
-    height: 100%;
 }
 
 .bell {
@@ -297,8 +297,11 @@ main {
 
 /* Main Right */
 
-.message-box {
+.app-right main {
     overflow-y: auto;
+}
+
+.message-box {
     width: 90%;
     margin: 0 auto;
 }
