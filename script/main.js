@@ -23,13 +23,79 @@ jQuery( document ).ready( function($) {
 
             sendMessageText(inputText);
             reciveMessageAppend();
-            
+
         }   
 
     });
 
-    
+    /**
+     * 
+     *  Ricerca delle chat :
+     * 
+     */
 
+    var iconSearch = $('.search label i');
+    var chatSearchBar = $('#search-input');
+    var nomeChat = [
+                     'Michele',
+                     'Fabio',
+                     'Samuele',
+                     'Alessandro B.',
+                     'Alessandro L.', 
+                     'Claudia', 
+                     'Davide', 
+                     'Federico'
+                    ];
+
+
+    iconSearch.on('click', function() {
+
+        var textSearchBar = chatSearchBar.val();
+
+        if ( textSearchBar !== '' ) {
+
+            $('.global-chat div').hide();
+
+            for ( var i = 0; i < nomeChat.length; i++ ) {
+                for ( var k = 0; k < nomeChat[i].length; k++) {     
+                    if ( nomeChat[i].includes(textSearchBar) ) {
+                        console.log(nomeChat[i]);
+                        
+                    }
+                }
+                
+
+
+                /*
+                for ( var k = 0; k <= nomeChat[i].length; k++) {
+
+                    if ( nomeChat[i].includes(k) ) {
+                        console.log('si');
+                    }
+                    
+                }
+                */
+                
+            }
+            
+        } else if ( textSearchBar == '' ) {
+
+                $('.global-chat div').show();
+
+        }
+        
+
+        //for ( var i = 0; i <= textSearchBar.length; i++ ) {
+        //}
+        
+
+    } );
+
+    /*
+    var textSearchBar = chatSearchBar.val();
+
+    console.log(textSearchBar);
+    */
     
 
 }); // <--------------------- End Page
