@@ -79,7 +79,9 @@ body {
 .app {
     width: 80%;
     height: 90%;
+    min-height: 300px;
     min-width: 900px;
+    max-width: 1500px;
     background-color: #fff;
     display: flex;
 }
@@ -87,7 +89,6 @@ body {
 /* ---- App section left ---- */
 
 .app-left {
-    /* height: 100%; */
     flex-basis: 35%;
     display: flex;
     flex-direction: column;
@@ -101,26 +102,31 @@ img {
     border-radius: 100%;
     cursor: pointer;
 }
-
+ 
 .header-left {
     display: flex;
     justify-content: space-between;
     padding: 10px 10px 10px 5px;
 }
 
-.header-left-action i {
+.header-left .header-left-action i {
     color: #b1b1b1;
     padding: 0 8px 0 8px;
     cursor: pointer;
 }
 
 /* Main left */
-
 main {
     overflow: hidden;
 }
 
-.bell {
+.sound-notification {
+    display: flex;
+    padding: 10px;
+    background-color: #b4e4ff;
+}
+
+.sound-notification .bell {
     height: 40px;
     width: 40px;
     background-color: #fff;
@@ -130,29 +136,23 @@ main {
     justify-content: center;
 }
 
-.sound-notification {
-    display: flex;
-    padding: 10px;
-    background-color: #b4e4ff;
-}
-
-.notification-sound-text {
+.sound-notification .notification-sound-text {
     margin: 0 0 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.bell i {
+.sound-notification .bell i {
     color: #9fd8f9;
 }
 
-.notification-sound-text p:first-child {
+.sound-notification .notification-sound-text p:first-child {
     font-size: 13px;
     font-weight: 700;
 }
 
-.notification-sound-text p:last-child {
+.sound-notification .notification-sound-text p:last-child {
     color: #577383;
     font-size: 10px;
     font-weight: 400;
@@ -167,7 +167,7 @@ main {
     background-color: #fafafa;
 }
 
-.search span {
+.search label {
     display: block;
     height: 25px;
     background-color: #fff;
@@ -185,7 +185,7 @@ main {
     border-left: none;
 }
 
-.search span i {
+.search label i {
     font-size: 10px;
     color: #eaeaea;
     padding: 5px 20px;
@@ -193,60 +193,59 @@ main {
 }
 
 /* Chat section*/
-
 .global-chat {
     overflow-y: auto;
     flex-grow: 1;
 }
 
 .global-chat .chat {
-    border-bottom: 1px solid #eaeaea; 
-}
-
-.global-chat .chat:last-child {
-    border: none;
-
-}
-
-.chat {
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #eaeaea; 
     transition: background .4s;
 }
 
-.info-chat {
+.global-chat .chat.active {
+    background-color: #E9EBEB;
+    border-bottom-color: transparent;
+}
+
+.global-chat .chat .info-chat {
     display: flex;
 }
 
-.chat-text {
+.global-chat .chat .info-chat .chat-text {
     margin: 0 0 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.chat:hover {
-    background-color: #eaeaea;
+.global-chat .chat:hover {
+    background-color: #f5f5f5;
 }
 
-.chat-text span:first-child {
+.global-chat .chat:last-child {
+    border: none;
+}
+
+.global-chat .chat-text span:first-child {
     font-size: 14px;
     margin: 0 0 5px 0;
 }
 
-.chat-text span:last-child {
+.global-chat .chat-text span:last-child {
     color: #577383;
     font-size: 10px;
 }
 
-.chat span:last-child {
+.global-chat .chat span:last-child {
     color: #577383;
     font-size: 10px;
 }
 
 /* ---- App sectio right ---- */
-
 .app-right {
     width: 65%;
     height: 100%;
@@ -255,6 +254,10 @@ main {
 }
 
 /* Header right */
+.app-right img {
+    height: 40px;
+    width: 40px;
+}
 
 .header-rigth {
     display: flex;
@@ -262,42 +265,46 @@ main {
     padding: 10px 10px 10px 5px;
 }
 
-.in-chat-text {
+.header-rigth .info-chat {
+    display: flex;
+}
+
+.header-rigth .info-chat .in-chat-text {
     margin: 0 0 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.header-right-action {
+.header-rigth .header-right-action {
     display: flex;
     align-items: center;
 }
 
-.app-right img {
-    height: 40px;
-    width: 40px;
-}
-
-.header-right-action i {
+.header-rigth .header-right-action i {
     color: #b1b1b1;
     padding: 0 8px 0 8px;
     cursor: pointer;
 }
 
-.in-chat-text span:first-child {
+.header-rigth .info-chat .in-chat-text span:first-child {
     font-size: 14px;
     margin: 0 0 5px 0;
 }
 
-.in-chat-text span:last-child {
+.header-rigth .info-chat .in-chat-text span:last-child {
     color: #577383;
     font-size: 10px;
 }
 
 /* Main Right */
-
 .app-right main {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/mine.jpg');
+    background-position: center;
     overflow-y: auto;
 }
 
@@ -306,7 +313,7 @@ main {
     margin: 0 auto;
 }
 
-.message {
+.message-box .message {
     width: 200px;
     max-width: 200px;
     padding: 5px;
@@ -314,36 +321,34 @@ main {
     border-radius: 10px;
 }
 
-.message-send {
+.message-box .message-chat {
+    display: none;
+}
+
+.message-box .message.message-send {
     background-color: #dcf8c0;
 }
 
-.message-recive {
+.message-box .message.message-recive {
     background-color: #fff;
 }
 
-.app-right main {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background-image: url('../img/mine.jpg');
-    background-position: center;
-}
-
-.message span:first-child {
+.message-box .message span:first-child {
     font-size: 13px;
     margin: 0 0 10px 0;
     word-wrap: anywhere;
 }
 
-.message span:last-child {
+.message-box .message span:last-child {
     font-size: 10px; 
     text-align: end;
 }
 
-/* Footer Right */
+.message-box .message-chat.active {
+    display: block;
+}
 
+/* Footer Right */
 .app-right footer {
     display: flex;
     justify-content: space-around;
@@ -368,7 +373,6 @@ main {
 }
 
 /* --------------- TEMPLATE -------------- */
-
 .template {
     display: none;
 }
