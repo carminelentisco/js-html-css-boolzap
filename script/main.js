@@ -6,34 +6,68 @@ jQuery( document ).ready( function($) {
     var inputText = $('.input-message-text');
     var iconMicSend = $('.icon');
 
-    inputText.on('focus', function () {
-        iconMicSend.removeClass('fa-microphone').addClass('fa-paper-plane');
+    inputText.on('focus blur', function () {
+        iconMicSend.toggleClass('fa-microphone fa-paper-plane');
     });
-
-    var messageBox = $('.message-box');
     
     iconMicSend.on('click', function() {
-        var newInputText = inputText.val();
-        var templateSendMessage = $('.template .template-message').clone();
-        templateSendMessage.find('span:first-child').text(newInputText);
-        messageBox.append(templateSendMessage);
-        inputText.val('');
-        iconMicSend.removeClass('fa-paper-plane').addClass('fa-microphone');
+
+        sendMessageText(inputText);
+        reciveMessageAppend();
+        
     });
 
     inputText.keyup(function (e) {   
+        
         if ( e.which == 13 ) {
-            var newInputText = inputText.val();
-            inputText.val('');
-            if ( newInputText !== '' ) {
-                var templateSendMessage = $('.template .template-message').clone();
-                templateSendMessage.find('.message span:first-child').text(newInputText);
-                messageBox.append(templateSendMessage);
-                iconMicSend.removeClass('fa-paper-plane').addClass('fa-microphone');
-            }
-        }
+
+            sendMessageText(inputText);
+            reciveMessageAppend();
+            
+        }   
+
     });
+
+    
+
+    
 
 }); // <--------------------- End Page
 
+/********** FUNZIONI ***********/
 
+
+function sendMessageText (input) {    // Messaggio inviato
+
+    var newInputText = input.val().trim();
+    
+    if  ( ( newInputText.length > 0 ) && ( newInputText !== '' ) ) {
+
+        var templateMessage = $('.template .template-message').clone();
+        templateMessage.find('span:first-child').text(newInputText);
+        templateMessage.addClass('flex_end').children().addClass('message-send');
+        $('.message-chat.active').append(templateMessage);
+        input.val('');
+
+    }
+    
+}
+
+function createReciveMessage() {    // Creazione messaggio di risposta
+
+    var templateMessage = $('.template .template-message').clone();
+    templateMessage.addClass('flex_start').find('span:first-child').text('ok');
+    templateMessage.children().addClass('message-recive');
+    $('.message-chat.active').append(templateMessage);
+
+}
+
+function reciveMessageAppend () {
+
+    setTimeout( function () {
+
+        createReciveMessage();
+
+    }, 1000);
+
+}
