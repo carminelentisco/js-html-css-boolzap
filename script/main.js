@@ -2,7 +2,7 @@
 
 jQuery( document ).ready( function($) {
 
-    /********** Logica di invio messaggi **********/
+    /********** LOGICA D'INVIO MESSAGGI **********/
     
     // Setup 
     var inputText = $('.input-message-text');
@@ -32,9 +32,9 @@ jQuery( document ).ready( function($) {
     });
 
 
-    /********** Ricerca delle chat **********/
+    /********** CHAT **********/
 
-    // Setup
+    // Ricerca contatti - Setup
     var searchInput = $('#search-input');   
 
 
@@ -53,6 +53,11 @@ jQuery( document ).ready( function($) {
         });
     });
     
+    // Selezione contatti - Setup
+    var chat = $('.global-chat .chat');
+    selectChat (chat);
+    
+
 }); // <--------------------- End Page
 
 /********** FUNZIONI ***********/
@@ -113,4 +118,15 @@ function time () {
 function scroltop () {
     var pixelScroll = $('.message-chat.active').height();
     $('.app-right main').scrollTop(pixelScroll);
+}
+
+function selectChat (chat) {
+    chat.each(function() {
+
+        $(this).on('click', function(){
+            $('.global-chat .chat').removeClass('active');
+            $(this).toggleClass('active');
+        });
+
+    });
 }
