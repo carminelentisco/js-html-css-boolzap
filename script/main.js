@@ -61,6 +61,8 @@ jQuery( document ).ready( function($) {
 
 }); // <--------------------- End Page
 
+
+
 /********** FUNZIONI ***********/
 
 
@@ -76,6 +78,7 @@ function sendMessageText (input) {    // Messaggio inviato
         templateMessage.addClass('flex_end').children().addClass('message-send');
         $('.message-chat.active').append(templateMessage);
         input.val('');
+        scroltop ();
 
     }
     
@@ -128,9 +131,13 @@ function selectChat (chat) {
         $(this).on('click', function(){
             $('.global-chat .chat').removeClass('active');
             $(this).toggleClass('active');
+            
             $('.message-chat').removeClass('active');
+            $('.info-chat').removeClass('active');
             var dataConversazione = $(this).attr('data-conversazione');
             $('.message-chat[data-conversazione="' + dataConversazione + '"]').toggleClass('active');
+            $('.info-chat[data-conversazione="' + dataConversazione + '"]').toggleClass('active');
+
         });
 
     });
