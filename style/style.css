@@ -6,7 +6,6 @@
 
 
 /* ---------- IMPORT ---------- */
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
 /*
@@ -17,7 +16,6 @@
 */
 
 /* ---------- GENERAL RULE ---------- */
-
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +39,6 @@ body {
 }
 
 /* ------------- Utility ------------ */
-
 .display_none {
     display: none;
 }
@@ -75,7 +72,6 @@ body {
 }
 
 /* ---------- Applicazione ---------- */
-
 .app {
     width: 80%;
     height: 90%;
@@ -87,7 +83,6 @@ body {
 }
 
 /* ---- App section left ---- */
-
 .app-left {
     flex-basis: 35%;
     display: flex;
@@ -95,7 +90,6 @@ body {
 }
 
 /* Header left */
-
 img {
     height: 40px;
     width: 40px;
@@ -323,6 +317,7 @@ main {
 
 .message-box .message-chat {
     display: none;
+    padding: 7% 0;
 }
 
 .message-box .message.message-send {
