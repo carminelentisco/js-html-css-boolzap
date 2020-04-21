@@ -53,10 +53,11 @@ jQuery( document ).ready( function($) {
         });
     });
     
-    // Selezione contatti - Setup
+    // Selezione contatti + show/hide chat - Setup
     var chat = $('.global-chat .chat');
-    selectChat (chat);
     
+    selectChat (chat);
+
 
 }); // <--------------------- End Page
 
@@ -121,12 +122,17 @@ function scroltop () {
 }
 
 function selectChat (chat) {
+    
     chat.each(function() {
 
         $(this).on('click', function(){
             $('.global-chat .chat').removeClass('active');
             $(this).toggleClass('active');
+            $('.message-chat').removeClass('active');
+            var dataConversazione = $(this).attr('data-conversazione');
+            $('.message-chat[data-conversazione="' + dataConversazione + '"]').toggleClass('active');
         });
 
     });
+
 }
