@@ -260,6 +260,10 @@ main {
 }
 
 .header-rigth .info-chat {
+    display: none;
+}
+
+.header-rigth .info-chat.active {
     display: flex;
 }
 
